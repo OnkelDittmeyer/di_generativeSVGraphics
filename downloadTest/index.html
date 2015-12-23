@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="/tpl/js/apirequest.js"></script>
+<script src="vizLib/snap.svg-min.js"></script>
+<script src="vizLib/location.js"></script>
+<script src="vizLib/barcodeViz.js"></script>
+<script src="vizLib/universalElements"></script>
+
+<script src="vizLib/bodyViz.js"></script>
+<script src="vizLib/body.js"></script>
+
+<script src="vizLib/knowledgeViz.js"></script>
+<script src="vizLib/knowledge.js"></script>
+
+
+
+
+<script type="text/javascript">
+
+
+  var api_adrress   = "/api/v0";
+  var restFulLinks  = "true";
+
+  var datasets = []	;
+  	 
+  	 
+  	 
+  	 apiRequest('datasets', 'all', 'json').done(function(data){
+
+  	 		
+  	 		var vizOne = new barcodeViz(getArrayData(data,0), 'vizOne');
+			setInterval(vizOne.updateViz.bind(vizOne),5000);		
+  	 		
+  	 		var vizTwo = new bodyViz(getArrayData(data,1), 'vizTwo');
+ 			setInterval(vizTwo.updateViz.bind(vizTwo),5000);		
+ 	 		
+  	 		var vizThree = new knowledgeViz(getArrayData(data, 2), 'vizThree')
+			//setInterval(vizThree.updateViz.bind(vizThree),5000);		
+  	 		
+
+
+	});
+	
+
+	
+	
+	
+	
+	
+	
+
+</script>
+
+
+</head>
+<body>
+
+
+
+</body>
+</html>

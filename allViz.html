@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type=text/css>
+
+</style>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="/tpl/js/apirequest.js"></script>
+<script src="vizLib/snap.svg-min.js"></script>
+
+<script src="vizLib/location.js"></script>
+<script src="vizLib/viz1.js"></script>
+
+<script src="vizLib/universalElements"></script>
+
+<script src="vizLib/body.js"></script>
+
+<script src="vizLib/viz0.js"></script>
+
+<script src="vizLib/viz2.js"></script>
+<script src="vizLib/viz3.js"></script>
+<script src="vizLib/viz4.js"></script>
+<script src="vizLib/viz5.js"></script>
+<script src="vizLib/viz6.js"></script>
+<script src="vizLib/viz7.js"></script>
+<script src="vizLib/viz7_1.js"></script>
+<script src="vizLib/viz8.js"></script>
+<script src="vizLib/viz8_1.js"></script>
+
+<script src="vizLib/viz9.js"></script>
+<script src="vizLib/viz9_1.js"></script>
+<script src="vizLib/viz9_2.js"></script>
+
+
+<script src="vizLib/viz10.js"></script>
+<script src="vizLib/viz11.js"></script>
+<script src="vizLib/viz12.js"></script>
+<script src="vizLib/viz13.js"></script>
+<script src="vizLib/viz14.js"></script>
+<script src="vizLib/viz15.js"></script>
+<script src="vizLib/viz15_1.js"></script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+
+  var api_adrress   = "/api/v0";
+  var restFulLinks  = "true";
+
+  var datasets = []	;
+  var load = false;
+  	 
+
+
+
+
+  	 
+  	 apiRequest('datasets', 'all', 'json').done(function(data){
+			
+
+  	 		
+  	 		//viz1 = new viz1(getArrayData(data,0), 'viz1');
+  	 		viz2 = new viz4(data,'viz0');
+		
+  	 		viz5 = new viz7(data, 'viz1_0');
+  	 		viz6 = new viz7_1(data, 'viz1_1');
+
+ 	 		viz8 = new viz15(data,'viz2_0');			  	 		
+			viz9 = new viz15_1(data, 'viz2_1');
+  	 		
+  	 		//var viz2_2 = new viz2(getArrayData(data,1), 'vizTwo');		
+  	 		vizThree = new viz3(getArrayData(data, 2), 'vizThree');
+  	 		
+  	 		
+  	 		//vizFive = new viz5(data,'vizFive');
+  	 		
+  	 		vizSix = new viz6(data,'vizSix');
+ 	 		
+  	 		vizSeven = new viz7(data,'vizSeven');
+
+  	 		
+  	 		viz7_1 = new viz7_1(data,'viz7_1');
+  	 		
+  	 		viz8 = new viz8(data, 'viz8');
+  	 		viz8_1 = new viz8_1(data, 'viz8_1');
+
+
+  	 		viz9 = new viz9(data, 'viz9');
+  	 		
+  	 		viz10 = new viz10(data, 'viz10');
+  	 		
+  	 		viz11 = new viz11(data, 'viz11');
+  	 		
+  	 		viz9_2 = new viz9_2(data, 'viz9_2');
+  	 		
+  	 		viz12 = new viz12(data, 'viz12');
+
+  	 		viz13 = new viz13(data, 'viz13');
+
+  	 		viz14 = new viz14(data, 'viz14');
+
+  	 		viz15 = new viz15(data, 'viz15');
+
+
+		
+			setInterval(updateAll, 5000)
+
+	});
+
+
+	function updateAll(){
+
+		apiRequest('datasets', 'all', 'json').done(function(data){
+				
+				//viz1.updateViz(getArrayData(data, 0));	//location
+				//viz2.updateViz(data);	//location, knowledge
+/*
+				//vizTwo.updateViz(getArrayData(data, 1));
+				//vizThree.updateViz(getArrayData(data, 2));
+				vizFour.updateViz(data);
+				vizSeven.updateViz(data);
+				viz7_1.updateViz(data);
+				//viz8.updateViz(data);
+				viz8_1.updateViz(data);				
+				//viz9.updateViz(data);
+				//viz10.updateViz(data);
+				viz11.updateViz(data);
+				viz9_2.updateViz(data);
+				viz12.updateViz(data);
+				viz13.updateViz(data);
+				viz15.updateViz(data);
+*/
+	
+				
+				//vizOne.updateViz.bind(vizOne, getArrayData(data,0));				
+		})	
+	};
+	
+	
+	
+	
+	
+
+</script>
+
+
+</head>
+<body>
+
+
+
+</body>
+</html>

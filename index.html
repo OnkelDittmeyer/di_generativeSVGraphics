@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" media="screen" href="http://openfontlibrary.org/face/osp-din" rel="stylesheet" type="text/css"/>
+<style type=text/css>
+div{
+	font-family: osp-din, Verdana;
+	font-size: 8pt;
+	letter-spacing: 2px;
+
+}
+
+</style>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="/tpl/js/apirequest.js"></script>
+<script src="vizLib/snap.svg-min.js"></script>
+
+<script src="vizLib/location.js"></script>
+<script src="vizLib/viz1.js"></script>
+
+<script src="vizLib/universalElements"></script>
+
+<script src="vizLib/body.js"></script>
+
+
+<!--assembledViz-->
+<script src="vizLib/viz_a_0_0.js"></script>
+<script src="vizLib/viz_a_0_1.js"></script>
+<script src="vizLib/viz_a_0_2.js"></script>
+<script src="vizLib/viz_a_0_3.js"></script>
+<script src="vizLib/viz_a_0_4.js"></script>
+
+
+<script src="vizLib/viz_a_1_0.js"></script>
+<script src="vizLib/viz_a_1_1.js"></script>
+<script src="vizLib/viz_a_1_2.js"></script>
+<script src="vizLib/viz_a_1_3.js"></script>
+
+
+<script src="vizLib/viz_a_2_0.js"></script>
+<script src="vizLib/viz_a_2_1.js"></script>
+<script src="vizLib/viz_a_2_2.js"></script>
+<script src="vizLib/viz_a_2_3.js"></script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+
+  var api_adrress   = "/api/v0";
+  var restFulLinks  = "true";
+
+  var datasets = []	;
+  var load = false;
+  	 
+
+
+
+
+  	 
+  	 apiRequest('datasets', 'all', 'json').done(function(data){
+			
+
+  	 		viz0 = new viz_a_1_0(data,'viz0'); 	 		
+			viz1 = new viz_a_1_1(data,'viz1');
+  	 		viz2 = new viz_a_1_2(data,'viz2');
+  	 		viz3 = new viz_a_1_3(data,'viz3');
+			
+
+
+  	 		viz4 = new viz_a_0_1(data,'viz4');
+  	 		viz5 = new viz_a_0_2(data,'viz5');
+  	 		viz6 = new viz_a_0_3(data,'viz6');
+  	 		viz7 = new viz_a_0_4(data,'viz7');
+ 	 		
+
+			viz8 = new viz_a_2_0(data, 'viz8');			
+			viz9 = new viz_a_2_1(data, 'viz9');			
+			viz10 = new viz_a_2_2(data, 'viz10');			
+			viz11 = new viz_a_2_3(data, 'viz11');
+
+
+			
+			
+
+
+			createTextTags();
+			setInterval(updateAll, 5000)
+			
+			//setInterval(reloadPage, 36000)	//1min				
+			setInterval(reloadPage, 1800000)	//30min	
+
+	});
+
+
+	function updateAll(){
+
+		apiRequest('datasets', 'all', 'json').done(function(data){
+							
+
+				viz0.updateViz(data);
+				viz1.updateViz(data);
+				viz2.updateViz(data);
+				viz3.updateViz(data);				
+				
+
+
+				viz4.updateViz(data);
+				viz5.updateViz(data);
+				viz6.updateViz(data);
+				viz7.updateViz(data);
+				
+				viz8.updateViz(data);
+				viz9.updateViz(data);
+				viz10.updateViz(data);
+				viz11.updateViz(data);
+
+
+				
+		})	
+	};
+	
+	function reloadPage(){
+		location.reload(true);
+	}
+	
+</script>
+
+
+</head>
+<body>
+
+
+
+</body>
+</html>
